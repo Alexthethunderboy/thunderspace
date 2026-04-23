@@ -123,11 +123,11 @@ export function MindMap() {
   return (
     <div 
       ref={containerRef}
-      className="relative w-full h-[500px] md:h-[700px] bg-black/40 rounded-[1.5rem] md:rounded-[2.5rem] border border-white/5 overflow-hidden touch-none"
+      className="relative w-full h-[500px] md:h-[700px] obsidian-surface rounded-2xl border border-white/5 overflow-hidden touch-none"
     >
       <div className="absolute top-4 left-4 md:top-6 md:left-6 z-20">
-        <div className="flex items-center gap-2 text-white/40 font-mono text-[8px] md:text-[10px] uppercase tracking-widest bg-black/60 px-2 py-1 md:px-3 md:py-1.5 rounded-full border border-white/5 backdrop-blur-md">
-          <Network className="w-2 md:w-3 h-2 md:h-3 text-electric-storm" />
+        <div className="flex items-center gap-2 text-white/40 obsidian-mono text-[8px] md:text-[10px] uppercase tracking-[0.3em] bg-white/5 px-2 py-1 md:px-3 md:py-1.5 border border-white/5 backdrop-blur-md">
+          <Network className="w-2 md:w-3 h-2 md:h-3 text-white/60" />
           Interactive Knowledge Graph
         </div>
       </div>
@@ -171,15 +171,15 @@ export function MindMap() {
                 setSelectedNode(node);
                 if (node.subNodes) toggleNode(node.id);
               }}
-              className={`px-3 py-1.5 md:px-4 md:py-2 rounded-full border bg-black/80 backdrop-blur-sm transition-all hover:scale-110 active:scale-95 flex items-center gap-2 cursor-pointer shadow-xl ${
-                selectedNode?.id === node.id ? 'ring-2 ring-white/20' : ''
+              className={`px-3 py-1.5 md:px-4 md:py-2 rounded-lg border bg-obsidian backdrop-blur-sm transition-all hover:scale-110 active:scale-95 flex items-center gap-2 cursor-pointer shadow-2xl ${
+                selectedNode?.id === node.id ? 'ring-1 ring-white/20 bg-white/5' : ''
               }`}
               style={{ borderColor: `${node.color}40`, color: node.color }}
             >
-              <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full" style={{ backgroundColor: node.color }} />
-              <span className="text-[10px] md:text-sm font-bold whitespace-nowrap">{node.label}</span>
+              <div className="w-1.5 h-1.5 md:w-2 md:h-2" style={{ backgroundColor: node.color }} />
+              <span className="text-[10px] md:text-sm obsidian-heading whitespace-nowrap">{node.label}</span>
               {node.subNodes && (
-                <div className="text-[8px] font-mono opacity-50 ml-1">
+                <div className="text-[8px] obsidian-mono opacity-50 ml-1">
                   {expandedNodes.has(node.id) ? '−' : '+'}
                 </div>
               )}
@@ -200,9 +200,9 @@ export function MindMap() {
                       y: Math.sin(angle) * distance 
                     }}
                     exit={{ scale: 0, x: 0, y: 0 }}
-                    className="absolute top-1/2 left-1/2 -ml-8 md:-ml-12 -mt-3 md:-mt-4 w-16 md:w-24 p-1 md:p-2 rounded-lg bg-white/5 border border-white/10 backdrop-blur-md text-center"
+                    className="absolute top-1/2 left-1/2 -ml-8 md:-ml-12 -mt-3 md:-mt-4 w-16 md:w-24 p-1 md:p-2 rounded border border-white/10 obsidian-surface text-center shadow-xl"
                   >
-                    <span className="text-[8px] md:text-[10px] font-bold text-white/60 line-clamp-1">{sub.label}</span>
+                    <span className="text-[8px] md:text-[10px] obsidian-heading text-silver/80 line-clamp-1">{sub.label}</span>
                   </motion.div>
                 );
               })}
@@ -219,38 +219,38 @@ export function MindMap() {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="absolute top-0 right-0 bottom-0 w-full sm:w-80 bg-neutral-900/90 backdrop-blur-xl border-l border-white/10 p-6 md:p-8 z-30 flex flex-col gap-6 shadow-2xl overflow-y-auto"
+            className="absolute top-0 right-0 bottom-0 w-full sm:w-80 bg-obsidian border-l border-white/5 p-6 md:p-8 z-30 flex flex-col gap-6 shadow-2xl overflow-y-auto"
           >
             <button 
               onClick={() => setSelectedNode(null)}
-              className="absolute top-6 right-6 p-2 rounded-full hover:bg-white/5 transition-colors text-white/40"
+              className="absolute top-6 right-6 p-2 rounded-lg hover:bg-white/5 transition-colors text-white/40"
             >
-              <X className="w-5 h-5" />
+              <X className="w-4 h-4" />
             </button>
 
             <div className="mt-8 space-y-2">
-              <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500">
+              <div className="flex items-center gap-2 text-[9px] obsidian-mono uppercase tracking-[0.2em] text-silver/40">
                 <BookOpen className="w-3 h-3" />
                 Deep Dive Synthesis
               </div>
-              <h3 className="text-xl md:text-2xl font-bold text-white flex items-center gap-3">
-                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: selectedNode.color }} />
+              <h3 className="text-xl md:text-2xl obsidian-heading text-white flex items-center gap-3">
+                <div className="w-2 h-2" style={{ backgroundColor: selectedNode.color }} />
                 {selectedNode.label}
               </h3>
             </div>
 
-            <div className="p-4 rounded-2xl bg-white/5 border border-white/5 text-xs md:text-sm text-neutral-300 leading-relaxed italic">
-              "{selectedNode.synthesis || "Exploring the nuances of " + selectedNode.label + ". Synthesis in progress..."}"
+            <div className="p-5 obsidian-surface border border-white/5 text-xs md:text-sm text-silver/80 leading-relaxed font-light">
+              {selectedNode.synthesis || "Exploring the nuances of " + selectedNode.label + ". Synthesis in progress..."}
             </div>
 
             {selectedNode.subNodes && (
               <div className="space-y-4">
-                <h4 className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-neutral-500">Connecting Thoughts</h4>
+                <h4 className="text-[9px] obsidian-mono uppercase tracking-[0.2em] text-silver/40">Connecting Thoughts</h4>
                 <div className="space-y-3">
                   {selectedNode.subNodes.map(sub => (
-                    <div key={sub.id} className="p-3 rounded-xl bg-white/2 border border-white/5 hover:border-white/10 transition-colors">
-                      <div className="text-[10px] md:text-[11px] font-bold text-white mb-1">{sub.label}</div>
-                      <div className="text-[9px] md:text-[10px] text-neutral-500 leading-tight">{sub.description}</div>
+                    <div key={sub.id} className="p-4 obsidian-surface border border-white/5 hover:border-white/10 transition-colors group">
+                      <div className="text-[10px] md:text-[11px] obsidian-heading text-white mb-2 group-hover:text-metallic transition-colors">{sub.label}</div>
+                      <div className="text-[9px] md:text-[10px] obsidian-mono text-silver/60 leading-relaxed">{sub.description}</div>
                     </div>
                   ))}
                 </div>
@@ -259,12 +259,12 @@ export function MindMap() {
 
             <div className="mt-auto pt-6 border-t border-white/5">
               {selectedNode.url ? (
-                <Link href={selectedNode.url} className="w-full py-3 rounded-xl bg-white text-black font-bold text-center flex items-center justify-center gap-2 hover:bg-neutral-200 transition-colors text-xs md:text-sm">
+                <Link href={selectedNode.url} className="w-full py-3 obsidian-surface border border-white/20 text-white obsidian-mono text-[10px] uppercase tracking-widest text-center flex items-center justify-center gap-2 obsidian-hover">
                   Explore Hub
-                  <ExternalLink className="w-4 h-4" />
+                  <ExternalLink className="w-3 h-3" />
                 </Link>
               ) : (
-                <div className="text-center text-[10px] font-mono text-neutral-600 uppercase">
+                <div className="text-center text-[9px] obsidian-mono text-silver/40 uppercase tracking-[0.2em]">
                   Synthesis 85% Complete
                 </div>
               )}
@@ -273,7 +273,7 @@ export function MindMap() {
         )}
       </AnimatePresence>
 
-      <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 text-[8px] md:text-[10px] font-mono text-gray-500 uppercase tracking-widest bg-black/40 px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-white/5 backdrop-blur-md">
+      <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 text-[8px] md:text-[9px] obsidian-mono text-white/40 uppercase tracking-[0.3em] bg-white/5 px-3 py-1.5 md:px-4 md:py-2 border border-white/5 backdrop-blur-md">
         Drag nodes • Click for details
       </div>
     </div>

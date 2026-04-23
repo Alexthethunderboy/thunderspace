@@ -53,7 +53,7 @@ export function ParadigmShifter() {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onTouchMove={handleMouseMove}
-      className="relative w-full aspect-video md:aspect-21/9 rounded-3xl overflow-hidden border border-white/10 group cursor-ew-resize bg-neutral-900"
+      className="relative w-full aspect-video md:aspect-21/9 rounded-2xl overflow-hidden border border-white/5 group cursor-ew-resize bg-obsidian"
     >
       {/* Left Side: Status Quo */}
       <div 
@@ -61,13 +61,13 @@ export function ParadigmShifter() {
         style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
       >
         <div className="max-w-md">
-          <Lock className="w-12 h-12 text-neutral-500 mb-6 mx-auto" />
-          <h3 className="text-2xl md:text-3xl font-bold text-neutral-400 mb-2">{statusQuo.title}</h3>
-          <p className="text-neutral-600 font-mono text-xs uppercase tracking-widest mb-8">{statusQuo.subtitle}</p>
-          <ul className="space-y-3 text-neutral-500 text-sm md:text-base">
+          <Lock className="w-10 h-10 text-neutral-700 mb-6 mx-auto" />
+          <h3 className="text-xl md:text-2xl obsidian-heading text-neutral-500 mb-2">{statusQuo.title}</h3>
+          <p className="obsidian-mono text-[9px] text-neutral-700 uppercase tracking-widest mb-8">{statusQuo.subtitle}</p>
+          <ul className="space-y-3 text-neutral-600 obsidian-mono text-[11px] text-left inline-block">
             {statusQuo.points.map((p, i) => (
-              <li key={i} className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-neutral-700" />
+              <li key={i} className="flex items-center gap-3">
+                <div className="w-1 h-1 bg-neutral-800" />
                 {p}
               </li>
             ))}
@@ -77,24 +77,24 @@ export function ParadigmShifter() {
 
       {/* Right Side: Unlearned Perspective */}
       <div 
-        className="absolute inset-0 bg-yellow-500/5 flex flex-col items-center justify-center p-8 md:p-12 text-center"
+        className="absolute inset-0 bg-white/[0.02] flex flex-col items-center justify-center p-8 md:p-12 text-center"
         style={{ clipPath: `inset(0 0 0 ${sliderPos}%)` }}
       >
         <div className="max-w-md">
-          <div className="relative mb-6 mx-auto w-12 h-12">
-            <Unlock className="w-12 h-12 text-yellow-500" />
+          <div className="relative mb-6 mx-auto w-10 h-10">
+            <Unlock className="w-10 h-10 text-white" />
             <motion.div 
-              animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.5, 0.2] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="absolute inset-0 bg-yellow-500 blur-xl rounded-full"
+              animate={{ opacity: [0.1, 0.3, 0.1] }}
+              transition={{ duration: 3, repeat: Infinity }}
+              className="absolute inset-0 bg-white blur-xl rounded-full"
             />
           </div>
-          <h3 className="text-2xl md:text-3xl font-bold text-yellow-100 mb-2">{unlearned.title}</h3>
-          <p className="text-yellow-500/70 font-mono text-xs uppercase tracking-widest mb-8">{unlearned.subtitle}</p>
-          <ul className="space-y-3 text-neutral-300 text-sm md:text-base">
+          <h3 className="text-xl md:text-2xl obsidian-heading text-white mb-2">{unlearned.title}</h3>
+          <p className="obsidian-mono text-[9px] text-white/40 uppercase tracking-widest mb-8">{unlearned.subtitle}</p>
+          <ul className="space-y-3 text-silver/80 obsidian-mono text-[11px] text-left inline-block">
             {unlearned.points.map((p, i) => (
-              <li key={i} className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-yellow-500" />
+              <li key={i} className="flex items-center gap-3">
+                <div className="w-1 h-1 bg-white/40" />
                 {p}
               </li>
             ))}
@@ -105,18 +105,18 @@ export function ParadigmShifter() {
       {/* Slider Handle */}
       <motion.div 
         style={{ left: `${sliderPos}%` }}
-        className="absolute top-0 bottom-0 w-1 bg-yellow-500 z-10"
+        className="absolute top-0 bottom-0 w-px bg-white/20 z-10"
       >
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-yellow-500 border-4 border-neutral-900 shadow-xl flex items-center justify-center">
-          <div className="flex gap-0.5">
-            <div className="w-0.5 h-4 bg-neutral-900 rounded-full" />
-            <div className="w-0.5 h-4 bg-neutral-900 rounded-full" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-lg obsidian-surface border border-white/20 shadow-2xl flex items-center justify-center">
+          <div className="flex gap-1">
+            <div className="w-0.5 h-3 bg-white/40 rounded-full" />
+            <div className="w-0.5 h-3 bg-white/40 rounded-full" />
           </div>
         </div>
       </motion.div>
 
       {/* Instructions */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-mono text-neutral-500 uppercase tracking-widest bg-black/60 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/5 pointer-events-none group-hover:opacity-0 transition-opacity">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-[9px] obsidian-mono text-white/20 uppercase tracking-[0.3em] pointer-events-none group-hover:opacity-0 transition-opacity">
         Slide to shift paradigms
       </div>
     </div>

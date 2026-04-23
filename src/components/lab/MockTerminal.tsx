@@ -47,51 +47,52 @@ export function MockTerminal() {
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto rounded-xl overflow-hidden border border-green-500/20 bg-black/90 shadow-2xl font-mono text-sm">
+    <div className="w-full max-w-3xl mx-auto rounded-xl overflow-hidden border border-white/10 obsidian-surface shadow-2xl obsidian-mono text-sm relative group">
+      <div className="absolute inset-0 bg-neon-lab opacity-0 group-hover:opacity-[0.02] transition-opacity pointer-events-none" />
       {/* Terminal Header */}
-      <div className="bg-neutral-900 px-4 py-2 border-b border-green-500/10 flex items-center justify-between">
+      <div className="bg-white/5 px-4 py-3 border-b border-white/10 flex items-center justify-between relative z-10">
         <div className="flex items-center gap-2">
-          <Terminal className="w-3 h-3 text-green-500" />
-          <span className="text-[10px] text-green-500/70 uppercase tracking-widest">the_lab_terminal</span>
+          <Terminal className="w-3 h-3 text-white/60 group-hover:text-neon-lab transition-colors" />
+          <span className="text-[9px] text-white/40 uppercase tracking-[0.3em]">the_lab_terminal</span>
         </div>
-        <div className="flex gap-1.5">
-          <div className="w-2 h-2 rounded-full bg-red-500/20" />
-          <div className="w-2 h-2 rounded-full bg-yellow-500/20" />
-          <div className="w-2 h-2 rounded-full bg-green-500/20" />
+        <div className="flex gap-1.5 opacity-50">
+          <div className="w-2 h-2 rounded-full bg-white/20" />
+          <div className="w-2 h-2 rounded-full bg-white/20" />
+          <div className="w-2 h-2 rounded-full bg-neon-lab opacity-50" />
         </div>
       </div>
 
       {/* Terminal Body */}
       <div 
         ref={scrollRef}
-        className="p-4 h-64 overflow-y-auto scrollbar-hide space-y-2 selection:bg-green-500/30"
+        className="p-4 h-64 overflow-y-auto scrollbar-hide space-y-3 selection:bg-neon-lab selection:bg-opacity-20 relative z-10"
       >
         {history.map((entry, i) => (
           <div key={i} className="space-y-1">
-            <div className="flex items-center gap-2 text-green-500/50">
+            <div className="flex items-center gap-2 text-silver/40">
               <ChevronRight className="w-3 h-3" />
-              <span>{entry.cmd}</span>
+              <span className="text-xs">{entry.cmd}</span>
             </div>
-            <div className="text-green-500/90 pl-5 leading-relaxed">
+            <div className="text-silver/80 pl-5 leading-relaxed text-xs">
               {entry.output}
             </div>
           </div>
         ))}
 
-        <form onSubmit={handleSubmit} className="flex items-center gap-2">
-          <Hash className="w-3 h-3 text-green-500" />
+        <form onSubmit={handleSubmit} className="flex items-center gap-2 pt-2">
+          <Hash className="w-3 h-3 text-neon-lab opacity-70" />
           <input 
             type="text" 
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            className="flex-1 bg-transparent border-none outline-none text-green-500 placeholder:text-green-500/20"
+            className="flex-1 bg-transparent border-none outline-none text-white text-xs placeholder:text-silver/20 focus:ring-0"
             placeholder="Type a command..."
             autoFocus
           />
         </form>
       </div>
 
-      <div className="bg-green-500/5 px-4 py-1.5 border-t border-green-500/10 flex items-center justify-between text-[10px] text-green-500/30">
+      <div className="bg-white/5 px-4 py-2 border-t border-white/10 flex items-center justify-between text-[9px] text-white/40 uppercase tracking-[0.2em]">
         <span>STATUS: ACTIVE</span>
         <span>AUTH: ROOT@DIGIARCHIVE</span>
       </div>

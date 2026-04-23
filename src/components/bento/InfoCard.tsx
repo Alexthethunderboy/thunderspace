@@ -9,7 +9,7 @@ interface InfoCardProps {
   className?: string;
   children: ReactNode;
   href?: string;
-  variant?: 'default' | 'unlearn' | 'psychonaut' | 'lab';
+  variant?: 'default' | 'unlearn' | 'psychonaut' | 'lab' | 'library';
 }
 
 export function InfoCard({ className, children, href, variant = 'default' }: InfoCardProps) {
@@ -44,6 +44,8 @@ export function InfoCard({ className, children, href, variant = 'default' }: Inf
   const pulseScale = isPlaying ? [1, 1 + (energy * 0.02), 1] : [1, 1, 1];
   const pulseDuration = 60 / tempo; // Duration of one beat
 
+  const hoverClass = variant !== 'default' ? `obsidian-hover-${variant}` : '';
+
   const content = (
     <motion.div
       onMouseMove={handleMouseMove}
@@ -62,16 +64,11 @@ export function InfoCard({ className, children, href, variant = 'default' }: Inf
         transformStyle: "preserve-3d",
       }}
       className={cn(
-        "relative overflow-hidden rounded-3xl p-5 md:p-7 border border-white/10 backdrop-blur-md transition-all duration-300 group h-full cursor-pointer flex flex-col",
-        "bg-white/5 hover:bg-white/10 hover:border-white/20 hover:shadow-2xl hover:shadow-white/5",
-        variant === 'unlearn' && "border-yellow-500/20 bg-yellow-900/5 hover:border-yellow-500/40",
-        variant === 'psychonaut' && "border-green-500/20 bg-forest-floor-dark/30 hover:border-green-500/40",
-        variant === 'lab' && "border-blue-500/20 bg-blue-900/5 hover:border-blue-500/40",
+        "obsidian-surface obsidian-hover relative overflow-hidden rounded-2xl p-5 md:p-7 border border-white/5 transition-all duration-400 group h-full cursor-pointer flex flex-col",
+        hoverClass,
         className
       )}
     >
-      {/* Magnetic Glow Effect */}
-      <div className="absolute inset-0 bg-linear-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
       
       <div style={{ transform: "translateZ(20px)" }} className="h-full flex flex-col">
         {children}

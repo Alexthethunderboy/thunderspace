@@ -31,9 +31,9 @@ const notes = [
 ];
 
 const statusStyles = {
-  Seedling: "bg-green-500/10 text-green-500 border-green-500/20",
-  Budding: "bg-blue-500/10 text-blue-500 border-blue-500/20",
-  Evergreen: "bg-emerald-500/10 text-emerald-500 border-emerald-500/20"
+  Seedling: "bg-white/5 text-silver/60 border-white/10",
+  Budding: "bg-white/10 text-white/80 border-white/20",
+  Evergreen: "bg-neon-library/10 text-neon-library border-neon-library/20"
 };
 
 const statusIcons = {
@@ -45,45 +45,38 @@ const statusIcons = {
 export function DigitalGarden() {
   return (
     <div className="space-y-8">
-      <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-2xl font-display font-bold text-white">Digital Garden</h2>
-          <p className="text-sm text-neutral-500">Raw, fleeting thoughts in various stages of growth.</p>
-        </div>
-      </div>
-
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-3">
         {notes.map((note, i) => {
           const Icon = statusIcons[note.status as keyof typeof statusIcons];
           return (
             <motion.div
               key={note.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
+              transition={{ delay: i * 0.05 }}
               viewport={{ once: true }}
-              className="group p-6 rounded-2xl border border-white/5 bg-white/2 hover:bg-white/5 transition-all flex flex-col gap-4"
+              className="group p-8 obsidian-surface obsidian-hover border border-white/5 flex flex-col gap-6"
             >
               <div className="flex justify-between items-start">
-                <div className={`flex items-center gap-1.5 px-2 py-1 rounded-md border text-[10px] font-mono uppercase ${statusStyles[note.status as keyof typeof statusStyles]}`}>
+                <div className={`flex items-center gap-2 px-2 py-1 border text-[9px] obsidian-mono uppercase tracking-[0.2em] ${statusStyles[note.status as keyof typeof statusStyles]}`}>
                   <Icon className="w-3 h-3" />
                   {note.status}
                 </div>
-                <div className="flex items-center gap-1 text-[10px] font-mono text-neutral-600">
+                <div className="flex items-center gap-1.5 text-[9px] obsidian-mono text-silver/40 uppercase tracking-[0.2em]">
                   <Timer className="w-3 h-3" />
                   {note.updated}
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <h3 className="text-lg font-bold text-neutral-200 group-hover:text-white transition-colors">{note.title}</h3>
-                <p className="text-sm text-neutral-500 leading-relaxed line-clamp-3">{note.content}</p>
+              <div className="space-y-3">
+                <h3 className="text-xl obsidian-heading text-white group-hover:text-metallic transition-colors">{note.title}</h3>
+                <p className="text-sm text-silver/60 obsidian-mono leading-relaxed line-clamp-3">{note.content}</p>
               </div>
 
-              <div className="mt-auto pt-4 flex gap-2">
+              <div className="mt-auto pt-6 flex gap-2">
                 {note.tags.map(tag => (
-                  <span key={tag} className="text-[9px] font-mono text-neutral-600 bg-neutral-900 px-1.5 py-0.5 rounded">
-                    #{tag}
+                  <span key={tag} className="text-[9px] obsidian-mono text-silver/40 uppercase tracking-[0.2em] bg-white/5 px-2 py-1 border border-white/5">
+                    {tag}
                   </span>
                 ))}
               </div>

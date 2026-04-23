@@ -32,45 +32,45 @@ const posts = [
 
 export function JournalSection() {
   return (
-    <div className="space-y-8 py-12">
-      <div className="flex items-center gap-3 mb-8">
-        <Sparkles className="w-6 h-6 text-yellow-500" />
-        <h2 className="text-2xl font-display font-bold">Unlearning Moments</h2>
+    <div className="space-y-12 py-12">
+      <div className="flex items-center gap-4 mb-8">
+        <Sparkles className="w-5 h-5 text-neon-unlearn opacity-80" />
+        <h2 className="text-xl obsidian-heading text-white">Unlearning Moments</h2>
       </div>
 
       <div className="grid gap-6">
         {posts.map((post) => (
           <motion.div 
             key={post.id}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-yellow-500/30 transition-all group"
+            className="p-8 obsidian-surface obsidian-hover border border-white/5 transition-all group"
           >
-            <div className="flex justify-between items-start mb-4">
-              <span className="text-[10px] font-mono text-gray-500">{post.date}</span>
-              <div className="flex gap-4">
-                <button className="flex items-center gap-1.5 text-xs text-gray-400 hover:text-red-500 transition-colors">
-                  <Heart className="w-4 h-4" />
+            <div className="flex justify-between items-start mb-6">
+              <span className="text-[9px] obsidian-mono text-silver/40 uppercase tracking-widest">{post.date}</span>
+              <div className="flex gap-6">
+                <button className="flex items-center gap-1.5 text-[10px] obsidian-mono text-silver/60 hover:text-white transition-colors">
+                  <Heart className="w-3.5 h-3.5" />
                   {post.likes}
                 </button>
-                <button className="flex items-center gap-1.5 text-xs text-gray-400 hover:text-blue-500 transition-colors">
-                  <MessageSquare className="w-4 h-4" />
+                <button className="flex items-center gap-1.5 text-[10px] obsidian-mono text-silver/60 hover:text-white transition-colors">
+                  <MessageSquare className="w-3.5 h-3.5" />
                   {post.comments}
                 </button>
               </div>
             </div>
             
-            <h3 className="text-xl font-bold mb-3 group-hover:text-yellow-100 transition-colors">
+            <h3 className="text-lg obsidian-heading text-white mb-4 group-hover:text-neon-unlearn transition-colors">
               {post.title}
             </h3>
             
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-silver/60 obsidian-mono leading-relaxed text-sm">
               {post.content}
             </p>
 
-            <div className="mt-6 pt-6 border-t border-white/5 flex justify-end">
-              <button className="text-gray-500 hover:text-white transition-colors">
+            <div className="mt-8 flex justify-end">
+              <button className="text-silver/20 hover:text-white transition-colors">
                 <Share2 className="w-4 h-4" />
               </button>
             </div>

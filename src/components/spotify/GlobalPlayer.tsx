@@ -23,33 +23,33 @@ export function GlobalPlayer() {
           href={data.songUrl} 
           target="_blank" 
           rel="noopener noreferrer"
-          className="flex items-center gap-3 bg-black/80 backdrop-blur-xl border border-white/10 pr-4 pl-1.5 py-1.5 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:border-green-500/50 transition-all duration-300 group scale-90 md:scale-100 ring-1 ring-white/5"
+          className="flex items-center gap-3 obsidian-surface obsidian-hover pr-4 pl-1.5 py-1.5 shadow-2xl transition-all duration-500 group scale-90 md:scale-100 border border-white/10"
         >
-          <div className="relative w-10 h-10 rounded-full overflow-hidden border border-white/10 shrink-0">
+          <div className="relative w-10 h-10 rounded-full overflow-hidden border border-white/10 shrink-0 grayscale-[0.4] group-hover:grayscale-0 transition-all duration-700">
              <img 
                src={data.albumImageUrl} 
                alt={data.album} 
-               className="w-full h-full object-cover animate-[spin_8s_linear_infinite]" 
+               className="w-full h-full object-cover animate-[spin_12s_linear_infinite]" 
                style={{ animationPlayState: isPlaying ? 'running' : 'paused' }}
              />
-             <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                <div className="w-1.5 h-1.5 bg-white/40 rounded-full backdrop-blur-sm" />
+             <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                <div className="w-2 h-2 bg-obsidian border border-white/20 rounded-full" />
              </div>
           </div>
           
           <div className="flex flex-col min-w-[80px] max-w-[140px] md:max-w-[160px]">
-             <span className="text-[10px] font-bold text-white truncate w-full group-hover:text-green-400 transition-colors leading-tight">
+             <span className="text-[10px] obsidian-mono font-bold text-white truncate w-full group-hover:text-metallic transition-colors leading-tight tracking-widest uppercase">
                {data.title}
              </span>
-             <div className="flex items-center gap-1.5 mt-0.5">
-               <span className="text-[9px] text-gray-400 truncate w-full">
-                 {data.artist}
-               </span>
-               <div className="flex gap-0.5 items-end h-2 shrink-0">
-                    <span className="w-0.5 bg-green-500 h-1 animate-[music-bar_0.5s_ease-in-out_infinite] shadow-[0_0_5px_#22c55e]" />
-                    <span className="w-0.5 bg-green-500 h-2 animate-[music-bar_0.6s_ease-in-out_infinite_0.1s] shadow-[0_0_5px_#22c55e]" />
-                    <span className="w-0.5 bg-green-500 h-1.5 animate-[music-bar_0.7s_ease-in-out_infinite_0.2s] shadow-[0_0_5px_#22c55e]" />
-               </div>
+             <div className="flex items-center gap-2 mt-1">
+                <span className="text-[9px] obsidian-mono text-silver/40 truncate w-full tracking-wider">
+                  {data.artist}
+                </span>
+                <div className="flex gap-0.5 items-end h-2 shrink-0">
+                     <span className="w-0.5 bg-white/40 h-1 animate-[music-bar_0.5s_ease-in-out_infinite]" />
+                     <span className="w-0.5 bg-white/40 h-2 animate-[music-bar_0.6s_ease-in-out_infinite_0.1s]" />
+                     <span className="w-0.5 bg-white/40 h-1.5 animate-[music-bar_0.7s_ease-in-out_infinite_0.2s]" />
+                </div>
              </div>
           </div>
         </a>

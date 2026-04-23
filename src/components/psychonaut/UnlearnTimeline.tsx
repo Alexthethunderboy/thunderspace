@@ -14,9 +14,9 @@ export const UnlearnTimeline: React.FC = () => {
 
   return (
     <div className="relative max-w-2xl mx-auto py-12 px-6">
-      <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-[2px] bg-white/10 -translate-x-1/2" />
+      <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-[2px] bg-white/5 -translate-x-1/2" />
       <motion.div
-        className="absolute left-6 md:left-1/2 top-0 bottom-0 w-[2px] bg-green-500 origin-top -translate-x-1/2 z-10"
+        className="absolute left-6 md:left-1/2 top-0 bottom-0 w-[2px] bg-white/40 origin-top -translate-x-1/2 z-10"
         style={{ scaleY }}
       />
 
@@ -32,15 +32,15 @@ export const UnlearnTimeline: React.FC = () => {
             } items-center gap-8`}
           >
             {/* Dot */}
-            <div className="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-black border-2 border-green-500 -translate-x-1/2 z-20 shadow-[0_0_10px_rgba(34,197,94,0.5)]" />
+            <div className="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-obsidian border-2 border-white/40 -translate-x-1/2 z-20" />
 
             {/* Content */}
             <div className={`w-full md:w-1/2 ${i % 2 === 0 ? "md:text-right" : "md:text-left"} pl-12 md:pl-0`}>
-              <span className="text-3xl font-display font-bold text-green-500/50 mb-2 block">
+              <span className="text-3xl md:text-4xl obsidian-heading text-silver/20 mb-3 block tracking-tighter">
                 {point.year}
               </span>
-              <h4 className="text-xl font-bold text-white mb-2">{point.event}</h4>
-              <p className="text-neutral-400 text-sm leading-relaxed max-w-xs ml-auto mr-0 md:mx-0">
+              <h4 className="text-xl md:text-2xl obsidian-heading text-white mb-3">{point.event}</h4>
+              <p className="text-silver/60 obsidian-mono text-sm leading-relaxed max-w-xs ml-auto mr-0 md:mx-0">
                 {point.context}
               </p>
             </div>

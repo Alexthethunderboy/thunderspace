@@ -1,71 +1,84 @@
-import { ArrowLeft, Construction, ExternalLink, Sparkles } from "lucide-react";
+import { ArrowLeft, ExternalLink, Sparkles, Book } from "lucide-react";
 import Link from "next/link";
 import { JournalSection } from "@/components/unlearn/JournalSection";
 import { ParadigmShifter } from "@/components/unlearn/ParadigmShifter";
 import { ActivistLedger } from "@/components/unlearn/ActivistLedger";
 
 export const metadata = {
-  title: "Unlearn Naija | The ThunderSpace",
+  title: "Unlearn Naija | The Archive",
   description: "Dismantling paradigms and rethinking our shared history.",
 };
 
 export default function UnlearnPage() {
   return (
-    <div className="max-w-5xl mx-auto px-4 pb-20">
-      <Link href="/" className="fixed top-24 left-4 md:left-8 flex items-center gap-2 text-neutral-400 hover:text-white transition-colors z-20">
-        <ArrowLeft className="w-4 h-4" />
-        <span>Back</span>
+    <div className="max-w-4xl mx-auto px-4 pb-32 min-h-screen obsidian-ambient-unlearn">
+      <Link href="/archive" className="fixed top-24 left-4 md:left-8 flex items-center gap-2 text-silver/40 hover:text-white transition-colors z-20 group">
+        <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+        <span className="text-[9px] uppercase tracking-widest obsidian-mono">Archive</span>
       </Link>
       
-      <div className="min-h-[60vh] flex flex-col items-center justify-center text-center space-y-8 py-20">
+      <header className="min-h-[70vh] flex flex-col items-center justify-center text-center space-y-12 py-20">
         <div className="relative">
-          <div className="absolute inset-0 bg-yellow-500 blur-[80px] opacity-20" />
-          <Sparkles className="w-20 h-20 text-yellow-500 relative z-10" />
+          <div className="p-8 obsidian-surface border border-white/5 relative z-10 shadow-2xl">
+            <Sparkles className="w-12 h-12 text-white/80" />
+            <div className="absolute inset-0 bg-white/5 animate-sheen" />
+          </div>
         </div>
 
-        <div className="space-y-4 max-w-2xl">
-          <h1 className="text-4xl md:text-6xl font-display font-bold text-yellow-100">
+        <div className="space-y-6 max-w-2xl">
+          <h1 className="text-5xl md:text-7xl obsidian-heading text-white tracking-tighter">
             Unlearn Naija
           </h1>
-          <div className="flex items-center justify-center gap-2 text-yellow-500/70 font-mono text-xs border border-yellow-500/30 p-2 rounded bg-yellow-900/10 w-fit mx-auto">
-            <span className="animate-pulse">●</span>
-            <span>LIVE INTERACTIVE MODULES ENABLED</span>
+          <div className="flex items-center justify-center gap-3 obsidian-mono text-[9px] uppercase tracking-[0.3em] opacity-60">
+            <span className="w-1.5 h-1.5 bg-white/40" />
+            <span>Cultural Observation in Progress</span>
           </div>
-          <p className="text-xl text-neutral-300">
+          <p className="text-xl md:text-2xl text-silver/70 obsidian-mono leading-relaxed">
             A digital platform dedicated to cultural re-education, dismantling societal programming, and community activism.
           </p>
-          <div className="pt-4">
+          <div className="pt-8">
              <a 
                href="https://unlearn-archive.vercel.app" 
                target="_blank" 
                rel="noopener noreferrer"
-               className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-500/10 hover:bg-yellow-500/20 text-yellow-500 border border-yellow-500/50 rounded-lg transition-all"
+               className="inline-flex items-center gap-3 px-8 py-3 obsidian-surface obsidian-hover border border-white/10 text-white text-[10px] obsidian-mono uppercase tracking-[0.3em] transition-all"
              >
-               <span>Visit Full Archive</span>
+               <span>Full Repository</span>
                <ExternalLink className="w-4 h-4" />
              </a>
           </div>
         </div>
-      </div>
+      </header>
 
-      <div className="space-y-32">
+      <div className="space-y-48">
+        {/* Paradigm Shifter - Styled as an Observation */}
         <section className="space-y-12">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-            <div>
-              <h2 className="text-3xl font-display font-bold text-white mb-2">The Paradigm Shifter</h2>
-              <p className="text-neutral-500 max-w-lg">
-                Interact with the slider to see how "unlearning" changes our perspective on societal structures.
-              </p>
+          <div className="flex flex-col gap-4 text-center items-center">
+            <div className="flex items-center gap-2 obsidian-mono text-silver/40 text-[9px] uppercase tracking-widest">
+              <Book className="w-3 h-3" />
+              Chapter 01
             </div>
+            <h2 className="text-4xl md:text-5xl obsidian-heading text-white">The Perspective Shift</h2>
+            <p className="text-silver/60 max-w-xl obsidian-mono leading-relaxed text-sm">
+              Explore how unlearning changes our lens on the structures we once considered absolute.
+            </p>
           </div>
-          <ParadigmShifter />
+          <div className="obsidian-surface p-8 md:p-12 border border-white/5">
+            <ParadigmShifter />
+          </div>
         </section>
 
-        <section>
+        {/* Ledger - Styled as a Collection of Actions */}
+        <section className="space-y-12">
+          <div className="text-center">
+             <h2 className="text-4xl md:text-5xl obsidian-heading text-white tracking-tight">Activist Ledger</h2>
+             <p className="obsidian-mono text-[9px] text-silver/40 uppercase tracking-[0.3em] mt-4">Tracing movements & intentions</p>
+          </div>
           <ActivistLedger />
         </section>
 
-        <section className="border-t border-white/10 pt-12">
+        {/* Journal - Final Thoughts */}
+        <section className="border-t border-white/5 pt-24">
           <JournalSection />
         </section>
       </div>

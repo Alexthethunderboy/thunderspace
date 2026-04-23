@@ -63,15 +63,15 @@ export function FlyingDock() {
   const mouseX = useMotionValue(Infinity);
 
   const links = [
-    { title: "Portfolio", icon: <PortfolioLogo className="h-full w-full" />, href: "https://thunderboy.vercel.app/", color: "text-yellow-400" },
-    { title: "Mail", icon: <MailLogo className="h-full w-full" />, href: "mailto:alexthegreatdeveloper@gmail.com", color: "text-red-500" },
+    { title: "Portfolio", icon: <PortfolioLogo className="h-full w-full" />, href: "https://thunderboy.vercel.app/", color: "text-white" },
+    { title: "Mail", icon: <MailLogo className="h-full w-full" />, href: "mailto:alexthegreatdeveloper@gmail.com", color: "text-white" },
     { title: "GitHub", icon: <GithubLogo className="h-full w-full" />, href: "https://github.com/Alexthethunderboy", color: "text-white" },
-    { title: "LinkedIn", icon: <LinkedinLogo className="h-full w-full" />, href: "https://www.linkedin.com/in/thunderboy", color: "text-blue-600" },
+    { title: "LinkedIn", icon: <LinkedinLogo className="h-full w-full" />, href: "https://www.linkedin.com/in/thunderboy", color: "text-white" },
     { title: "X (Twitter)", icon: <XLogo className="h-full w-full" />, href: "https://x.com/xthethunderboy", color: "text-white" },
-    { title: "Instagram", icon: <InstagramLogo className="h-full w-full" />, href: "https://www.instagram.com/heisthunderboy/", color: "text-pink-500" },
-    { title: "TikTok", icon: <TiktokLogo className="h-full w-full" />, href: "https://www.tiktok.com/@alexthethunderboy", color: "text-cyan-400" },
-    { title: "Substack", icon: <SubstackLogo className="h-full w-full" />, href: "https://themedgriot.substack.com/", color: "text-orange-500" },
-    { title: "Spotify", icon: <SpotifyLogo className="h-full w-full" />, href: "/api/spotify", color: "text-green-500" },
+    { title: "Instagram", icon: <InstagramLogo className="h-full w-full" />, href: "https://www.instagram.com/heisthunderboy/", color: "text-white" },
+    { title: "TikTok", icon: <TiktokLogo className="h-full w-full" />, href: "https://www.tiktok.com/@alexthethunderboy", color: "text-white" },
+    { title: "Substack", icon: <SubstackLogo className="h-full w-full" />, href: "https://themedgriot.substack.com/", color: "text-white" },
+    { title: "Spotify", icon: <SpotifyLogo className="h-full w-full" />, href: "/api/spotify", color: "text-white" },
   ];
 
   return (
@@ -79,7 +79,7 @@ export function FlyingDock() {
       <motion.div
         onMouseMove={(e) => mouseX.set(e.pageX)}
         onMouseLeave={() => mouseX.set(Infinity)}
-        className="pointer-events-auto mx-auto flex h-14 sm:h-16 items-center gap-1.5 sm:gap-2 rounded-full bg-neutral-900/90 border border-neutral-800 px-3 backdrop-blur-md overflow-x-auto no-scrollbar w-auto max-w-[95vw] sm:max-w-none sm:overflow-visible justify-start sm:justify-center ring-1 ring-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+        className="pointer-events-auto mx-auto flex h-14 sm:h-16 items-center gap-1.5 sm:gap-2 rounded-2xl obsidian-dock px-3 overflow-x-auto no-scrollbar w-auto max-w-[95vw] sm:max-w-none sm:overflow-visible justify-start sm:justify-center shadow-2xl"
       >
         {links.map((link) => (
           <IconContainer mouseX={mouseX} key={link.title} {...link} />
@@ -109,8 +109,8 @@ function IconContainer({
     return val - bounds.x - bounds.width / 2;
   });
 
-  const widthTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
-  const heightTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
+  const widthTransform = useTransform(distance, [-150, 0, 150], [40, 70, 40]);
+  const heightTransform = useTransform(distance, [-150, 0, 150], [40, 70, 40]);
 
   const width = useSpring(widthTransform, { mass: 0.1, stiffness: 150, damping: 12 });
   const height = useSpring(heightTransform, { mass: 0.1, stiffness: 150, damping: 12 });
@@ -126,22 +126,22 @@ function IconContainer({
         ref={ref}
         style={{ width, height }}
         className={cn(
-          "aspect-square rounded-full bg-neutral-800/50 hidden sm:flex items-center justify-center relative hover:bg-neutral-800 transition-all group border border-white/5",
+          "aspect-square rounded-xl bg-white/5 hidden sm:flex items-center justify-center relative hover:bg-white/10 hover:border-metallic/30 transition-all group border border-white/5",
           color
         )}
       >
-        <span className="absolute -top-10 left-1/2 -translate-x-1/2 w-auto p-2 min-w-max rounded-md bg-neutral-900 border border-neutral-800 text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 font-mono shadow-xl">
+        <span className="absolute -top-10 left-1/2 -translate-x-1/2 w-auto px-3 py-1 rounded bg-obsidian border border-white/10 text-white obsidian-mono text-[9px] tracking-widest opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 shadow-xl whitespace-nowrap">
           {title}
         </span>
-        <div className="h-5 w-5 sm:h-1/2 sm:w-1/2 flex items-center justify-center drop-shadow-[0_0_8px_currentColor]">{icon}</div>
+        <div className="h-5 w-5 sm:h-1/2 sm:w-1/2 flex items-center justify-center drop-shadow-[0_0_2px_rgba(255,255,255,0.3)]">{icon}</div>
       </motion.div>
       
-      {/* Mobile View - Consistent size, all links visible/scrolling */}
+      {/* Mobile View */}
       <div className={cn(
-        "w-9 h-9 sm:hidden rounded-full bg-neutral-800 flex items-center justify-center active:bg-neutral-700 transition-colors border border-white/5 shadow-lg",
+        "w-9 h-9 sm:hidden rounded-xl bg-white/5 flex items-center justify-center active:bg-white/10 transition-colors border border-white/5",
         color
       )}>
-         <div className="h-5 w-5 flex items-center justify-center drop-shadow-[0_0_5px_currentColor]">{icon}</div>
+         <div className="h-4 w-4 flex items-center justify-center drop-shadow-[0_0_2px_rgba(255,255,255,0.3)]">{icon}</div>
       </div>
     </Link>
   );

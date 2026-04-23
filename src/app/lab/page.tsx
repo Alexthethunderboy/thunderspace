@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowLeft, Terminal, GitBranch, Sparkles, Cpu } from "lucide-react";
+import { ArrowLeft, Terminal, GitBranch, Sparkles, Cpu, Code2 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { MockTerminal } from "@/components/lab/MockTerminal";
@@ -11,35 +11,35 @@ export default function LabPage() {
   const projects = [
     { 
       name: "Unlearn Naija", 
-      description: "Digital platform for cultural re-education and activism.", 
+      description: "A digital platform for cultural re-education and communal activism.", 
       stack: "Next.js, Supabase", 
-      status: "In Development",
+      status: "In Progress",
       href: "https://unlearn-archive.vercel.app"
     },
     { 
       name: "Shopper", 
-      description: "A modern, full-stack e-commerce platform.", 
+      description: "A modern, high-performance e-commerce architectural study.", 
       stack: "React, Node", 
       status: "Live",
       href: "https://shopper-chi-six.vercel.app/"
     },
     { 
       name: "JRUN", 
-      description: "Service platform connecting clients with providers.", 
+      description: "Connecting specialized service providers with local needs.", 
       stack: "React, Firebase", 
       status: "Live",
       href: "https://jrun-nu.vercel.app/"
     },
     { 
       name: "Weather App", 
-      description: "Real-time weather updates with intuitive UI.", 
+      description: "Intuitive meteorological data visualization.", 
       stack: "React, OpenWeather", 
       status: "Live",
       href: "https://thunderweather.vercel.app/"
     },
     { 
       name: "Spotify Playlist Gen", 
-      description: "Create personalized playlists based on preferences.", 
+      description: "Algorithmic curation of musical preferences.", 
       stack: "React, Spotify API", 
       status: "Live",
       href: "https://playlistgenerator.vercel.app/"
@@ -47,125 +47,124 @@ export default function LabPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#000510] selection:bg-green-500/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-32 pt-24 md:pt-32 space-y-24 md:space-y-32">
-        <Link 
-          href="/" 
-          className="fixed top-24 left-4 md:left-8 flex items-center gap-2 text-neutral-500 hover:text-white transition-all z-40 bg-black/40 backdrop-blur-xl px-4 py-2 rounded-full border border-white/5 hover:border-white/20 group font-mono text-[10px] uppercase tracking-widest"
-        >
-          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          <span>../back</span>
-        </Link>
+    <div className="max-w-5xl mx-auto px-4 pb-32 obsidian-ambient-lab min-h-screen">
+      <Link 
+        href="/" 
+        className="fixed top-24 left-4 md:left-8 flex items-center gap-2 text-silver/40 hover:text-white transition-colors z-20 group"
+      >
+        <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+        <span className="text-[9px] obsidian-mono uppercase tracking-[0.2em]">Home</span>
+      </Link>
 
-        <div>
-          <header className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-16 md:mb-20">
-            <div className="space-y-4">
-              <div className="flex items-center gap-4 text-green-500">
-                <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-green-500/10 border border-green-500/20 flex items-center justify-center backdrop-blur-xl">
-                  <Terminal className="w-6 h-6 md:w-8 md:h-8" />
-                </div>
-                <div>
-                  <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter font-mono italic">
-                    ~/the<span className="text-white">_lab</span>
-                  </h1>
-                  <p className="text-[10px] md:text-xs font-mono text-neutral-500 uppercase tracking-[0.3em] mt-1 md:mt-2">Experimental Sandbox v1.0.4</p>
-                </div>
-              </div>
-            </div>
-            <div className="flex items-center gap-2 text-neutral-500 font-mono text-[10px] md:text-xs border border-white/5 py-1.5 px-4 rounded-full bg-white/5 backdrop-blur-md">
-              <Cpu className="w-3 h-3 text-green-500 animate-pulse" />
-              EXPERIMENTAL OVERRIDE ACTIVE
-            </div>
-          </header>
-
-          <div className="grid lg:grid-cols-12 gap-12 md:gap-16 items-start">
-            <section className="lg:col-span-7 space-y-12">
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-lg bg-white/5 border border-white/5">
-                    <Sparkles className="w-5 h-5 text-green-500" />
-                  </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight font-mono uppercase italic">Interactive Console</h2>
-                </div>
-                <p className="text-neutral-500 text-sm md:text-base leading-relaxed max-w-xl font-mono">
-                  A custom bridge between human intent and machine execution. Input directives to traverse the lab's hidden architecture.
-                </p>
-              </div>
-              <div className="relative group">
-                <div className="absolute -inset-4 bg-green-500/10 rounded-4xl blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-                <div className="relative">
-                  <MockTerminal />
-                </div>
-              </div>
-            </section>
-
-            <section className="lg:col-span-5 space-y-12">
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-lg bg-white/5 border border-white/5">
-                    <Cpu className="w-5 h-5 text-green-500" />
-                  </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight font-mono uppercase italic">Tech Stack Aura</h2>
-                </div>
-                <p className="text-neutral-500 text-sm md:text-base leading-relaxed max-w-xl font-mono">
-                  Visual mapping of core technologies and their frequency within the forge.
-                </p>
-              </div>
-              <div className="bg-black/40 rounded-4xl border border-white/5 p-8 backdrop-blur-xl">
-                <TechStackAura />
-              </div>
-            </section>
-          </div>
-
-          <div className="pt-24 md:pt-32 grid lg:grid-cols-12 gap-16 md:gap-24">
-            <section className="lg:col-span-8 space-y-12">
-              <div className="flex items-center justify-between border-b border-white/5 pb-6">
-                <h2 className="text-2xl md:text-4xl font-bold text-white tracking-tight font-mono uppercase italic">Project Forge</h2>
-                <span className="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">{projects.length} UNITS DETECTED</span>
-              </div>
-              <div className="grid gap-6">
-                {projects.map((project, i) => (
-                  <motion.a 
-                    key={i} 
-                    href={project.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: i * 0.1 }}
-                    className="group border border-white/5 bg-white/2 p-6 md:p-8 rounded-4xl relative hover:bg-white/5 hover:border-green-500/30 transition-all flex flex-col md:flex-row md:items-center justify-between gap-6"
-                  >
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-3">
-                        <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-green-500 transition-colors font-mono">{project.name}</h3>
-                        <div className={`w-2 h-2 rounded-full ring-4 ring-black ${project.status === 'Live' ? 'bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)]' : 'bg-yellow-500 shadow-[0_0_10px_rgba(234,179,8,0.5)]'}`} />
-                      </div>
-                      <p className="text-neutral-500 text-sm md:text-base max-w-md font-mono line-clamp-2">{project.description}</p>
-                    </div>
-                    
-                    <div className="flex items-center gap-6 text-[10px] md:text-xs font-mono">
-                      <div className="flex flex-col items-end gap-2">
-                        <span className="flex items-center gap-2 text-neutral-600">
-                          <GitBranch className="w-3 h-3 md:w-4 md:h-4" />
-                          deploy/production
-                        </span>
-                        <span className="bg-white/5 px-3 py-1.5 rounded-full text-green-500/80 border border-green-500/10">
-                          {project.stack}
-                        </span>
-                      </div>
-                    </div>
-                  </motion.a>
-                ))}
-              </div>
-            </section>
-
-            <aside className="lg:col-span-4 space-y-12">
-               <div className="p-8 rounded-4xl border border-white/5 bg-black/40 backdrop-blur-xl sticky top-32">
-                  <GitHubPulse />
-               </div>
-            </aside>
+      <header className="min-h-[60vh] flex flex-col items-center justify-center text-center space-y-12 py-20">
+        <div className="relative">
+          <div className="p-6 rounded-2xl obsidian-surface border border-white/10 relative z-10">
+            <Code2 className="w-16 h-16 text-white/60" />
           </div>
         </div>
+        
+        <div className="space-y-6 max-w-3xl">
+          <div className="flex items-center justify-center gap-3 obsidian-mono text-[9px] text-white/40 uppercase tracking-[0.4em]">
+            <span className="w-1.5 h-1.5 bg-white/60" />
+            <span>Digital Studio & Forge</span>
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl obsidian-heading text-white tracking-tighter">
+            The Lab
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-silver/60 obsidian-mono font-light max-w-2xl mx-auto">
+            A creative sandbox where ideas are forged into functional ecosystems.
+          </p>
+        </div>
+      </header>
+
+      <div className="grid lg:grid-cols-12 gap-16 md:gap-24 items-start pb-32 border-b border-white/5">
+        <section className="lg:col-span-7 space-y-12">
+          <div className="space-y-4">
+            <div className="flex items-center gap-4">
+              <div className="p-2.5 rounded-xl obsidian-surface border border-white/10">
+                <Terminal className="w-5 h-5 text-white/60" />
+              </div>
+              <h2 className="text-2xl md:text-3xl obsidian-heading text-white">Interactive Console</h2>
+            </div>
+            <p className="text-silver/60 obsidian-mono text-sm leading-relaxed">
+              A bridge between intent and execution. Explore the architectural logic of this studio through directives.
+            </p>
+          </div>
+          <div className="obsidian-surface p-4 md:p-8 border border-white/5">
+            <MockTerminal />
+          </div>
+        </section>
+
+        <section className="lg:col-span-5 space-y-12">
+          <div className="space-y-4">
+            <div className="flex items-center gap-4">
+              <div className="p-2.5 rounded-xl obsidian-surface border border-white/10">
+                <Cpu className="w-5 h-5 text-white/60" />
+              </div>
+              <h2 className="text-2xl md:text-3xl obsidian-heading text-white">Tech Stack</h2>
+            </div>
+            <p className="text-silver/60 obsidian-mono text-sm leading-relaxed">
+              The core elements used to forge these digital environments.
+            </p>
+          </div>
+          <div className="obsidian-surface p-8 border border-white/5">
+            <TechStackAura />
+          </div>
+        </section>
+      </div>
+
+      <div className="pt-24 space-y-24">
+        <section className="space-y-16">
+          <div className="text-center">
+            <h2 className="text-4xl md:text-5xl obsidian-heading text-white">Project Forge</h2>
+            <p className="text-white/20 obsidian-mono text-[9px] uppercase tracking-[0.4em] mt-4">{projects.length} Curated Units</p>
+          </div>
+
+          <div className="grid gap-6 max-w-4xl mx-auto">
+            {projects.map((project, i) => (
+              <motion.a 
+                key={i} 
+                href={project.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.05 }}
+                className="group obsidian-surface obsidian-hover p-8 md:p-10 flex flex-col md:flex-row md:items-center justify-between gap-8 border border-white/5"
+              >
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <h3 className="text-xl md:text-2xl obsidian-heading text-white group-hover:text-metallic transition-colors">{project.name}</h3>
+                    <div className={`w-1 h-1 ${project.status === 'Live' ? 'bg-white' : 'bg-white/10'}`} />
+                  </div>
+                  <p className="text-silver/60 obsidian-mono text-sm leading-relaxed max-w-md">{project.description}</p>
+                </div>
+                
+                <div className="flex flex-col md:items-end gap-4 obsidian-mono text-[9px] uppercase tracking-[0.2em] text-white/20">
+                  <span className="flex items-center gap-2">
+                    <GitBranch className="w-3 h-3" />
+                    production
+                  </span>
+                  <span className="px-4 py-1.5 border border-white/10 text-white/60 bg-white/5">
+                    {project.stack}
+                  </span>
+                </div>
+              </motion.a>
+            ))}
+          </div>
+        </section>
+
+        <section className="max-w-xl mx-auto">
+           <div className="obsidian-surface p-12 border border-white/5">
+              <div className="flex items-center gap-3 mb-10 text-white/40">
+                <Sparkles className="w-4 h-4" />
+                <span className="text-[9px] obsidian-mono uppercase tracking-[0.3em]">Activity Pulse</span>
+              </div>
+              <GitHubPulse />
+           </div>
+        </section>
       </div>
     </div>
   );
