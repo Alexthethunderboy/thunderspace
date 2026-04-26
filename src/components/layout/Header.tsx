@@ -13,7 +13,7 @@ export function Header() {
               Kelechi Alexander Ugoh
             </span>
             <div className="flex items-center gap-2 obsidian-mono text-[9px] mt-1 opacity-60">
-              <span className="inline-block w-1.5 h-1.5 bg-metallic/40" />
+              <span className="inline-block w-1.5 h-1.5 bg-neon-primary/60 shadow-[0_0_5px_rgba(57,255,20,0.5)]" />
               <span>Personal Archive • Lagos, NG</span>
             </div>
           </div>

@@ -20,14 +20,15 @@ export default function PsychonautPage() {
       {/* Hero Section */}
       <header className="min-h-[60vh] flex flex-col items-center justify-center text-center space-y-12 py-20">
         <div className="relative">
-          <div className="p-6 rounded-2xl obsidian-surface border border-white/10 relative z-10">
-            <Leaf className="w-16 h-16 text-white/60" />
+          <div className="p-6 rounded-2xl obsidian-surface border border-neon-psychonaut-static relative z-10">
+            <Leaf className="w-16 h-16 text-neon-psychonaut opacity-80" />
           </div>
+          <div className="absolute inset-0 bg-neon-psychonaut/10 blur-3xl opacity-30 animate-pulse" />
         </div>
         
         <div className="space-y-6 max-w-3xl">
-          <div className="flex items-center justify-center gap-3 obsidian-mono text-[9px] text-white/40 uppercase tracking-[0.4em]">
-            <span className="w-1.5 h-1.5 bg-white/60" />
+          <div className="flex items-center justify-center gap-3 obsidian-mono text-[9px] text-neon-psychonaut/60 uppercase tracking-[0.4em]">
+            <span className="w-1.5 h-1.5 bg-neon-psychonaut shadow-[0_0_8px_rgba(176,38,255,0.6)]" />
             <span>Consciousness Research Log</span>
           </div>
           
@@ -47,7 +48,7 @@ export default function PsychonautPage() {
         {/* Mission Statement */}
         <div className="lg:col-span-12">
           <div className="obsidian-surface p-8 md:p-16 relative overflow-hidden border border-white/5">
-            <div className="flex items-center gap-2 text-white/40 mb-8 obsidian-mono">
+            <div className="flex items-center gap-2 text-neon-psychonaut/60 mb-8 obsidian-mono">
               <Info className="w-4 h-4" />
               <span className="text-[9px] uppercase tracking-[0.3em]">The Stance</span>
             </div>
@@ -60,7 +61,7 @@ export default function PsychonautPage() {
               <div className="space-y-4 border-l border-white/10 pl-8 obsidian-mono">
                 {['Scientific Accuracy', 'Historical Reclamation', 'Safety & Harm Reduction'].map((item) => (
                   <div key={item} className="flex items-center gap-4 text-[11px] tracking-widest text-silver/40 uppercase">
-                    <div className="w-1 h-1 bg-white/20" />
+                    <div className="w-1 h-1 bg-neon-psychonaut/40 shadow-[0_0_5px_rgba(176,38,255,0.4)]" />
                     {item}
                   </div>
                 ))}
@@ -83,7 +84,7 @@ export default function PsychonautPage() {
         {/* Neuro-Insight callout */}
         <div className="lg:col-span-4 flex flex-col">
           <div className="obsidian-surface p-8 h-full flex flex-col justify-center border border-white/10">
-            <div className="flex items-center gap-3 text-white/40 mb-8 obsidian-mono">
+            <div className="flex items-center gap-3 text-neon-psychonaut/60 mb-8 obsidian-mono">
               <Brain className="w-5 h-5" />
               <span className="text-[9px] uppercase tracking-[0.3em]">Neuro-Insight</span>
             </div>

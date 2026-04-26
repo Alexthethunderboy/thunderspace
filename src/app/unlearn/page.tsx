@@ -19,18 +19,19 @@ export default function UnlearnPage() {
       
       <header className="min-h-[70vh] flex flex-col items-center justify-center text-center space-y-12 py-20">
         <div className="relative">
-          <div className="p-8 obsidian-surface border border-white/5 relative z-10 shadow-2xl">
-            <Sparkles className="w-12 h-12 text-white/80" />
-            <div className="absolute inset-0 bg-white/5 animate-sheen" />
+          <div className="p-8 obsidian-surface border border-neon-unlearn-static relative z-10 shadow-2xl">
+            <Sparkles className="w-12 h-12 text-neon-unlearn opacity-80" />
+            <div className="absolute inset-0 bg-neon-unlearn/5 animate-sheen" />
           </div>
+          <div className="absolute inset-0 bg-neon-unlearn/10 blur-3xl opacity-30 animate-pulse" />
         </div>
 
         <div className="space-y-6 max-w-2xl">
           <h1 className="text-5xl md:text-7xl obsidian-heading text-white tracking-tighter">
             Unlearn Naija
           </h1>
-          <div className="flex items-center justify-center gap-3 obsidian-mono text-[9px] uppercase tracking-[0.3em] opacity-60">
-            <span className="w-1.5 h-1.5 bg-white/40" />
+          <div className="flex items-center justify-center gap-3 obsidian-mono text-[9px] text-neon-unlearn/60 uppercase tracking-[0.3em]">
+            <span className="w-1.5 h-1.5 bg-neon-unlearn shadow-[0_0_8px_rgba(255,0,60,0.6)]" />
             <span>Cultural Observation in Progress</span>
           </div>
           <p className="text-xl md:text-2xl text-silver/70 obsidian-mono leading-relaxed">
@@ -41,7 +42,7 @@ export default function UnlearnPage() {
                href="https://unlearn-archive.vercel.app" 
                target="_blank" 
                rel="noopener noreferrer"
-               className="inline-flex items-center gap-3 px-8 py-3 obsidian-surface obsidian-hover border border-white/10 text-white text-[10px] obsidian-mono uppercase tracking-[0.3em] transition-all"
+               className="inline-flex items-center gap-3 px-8 py-3 obsidian-surface obsidian-hover border border-neon-unlearn-static text-white text-[10px] obsidian-mono uppercase tracking-[0.3em] transition-all hover:bg-neon-unlearn/5"
              >
                <span>Full Repository</span>
                <ExternalLink className="w-4 h-4" />
@@ -54,7 +55,7 @@ export default function UnlearnPage() {
         {/* Paradigm Shifter - Styled as an Observation */}
         <section className="space-y-12">
           <div className="flex flex-col gap-4 text-center items-center">
-            <div className="flex items-center gap-2 obsidian-mono text-silver/40 text-[9px] uppercase tracking-widest">
+            <div className="flex items-center gap-2 obsidian-mono text-neon-unlearn/60 text-[9px] uppercase tracking-widest">
               <Book className="w-3 h-3" />
               Chapter 01
             </div>

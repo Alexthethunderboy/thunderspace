@@ -11,10 +11,10 @@ export default function Home() {
       {/* Industrial Hero Header */}
       <section className="flex flex-col gap-8 pt-12">
           <div className="space-y-4 max-w-4xl">
-              <div className="inline-flex items-center gap-3 px-4 py-1.5 obsidian-surface border border-white/5 text-white obsidian-mono text-[9px] tracking-[0.2em]">
+              <div className="inline-flex items-center gap-3 px-4 py-1.5 obsidian-surface border border-neon-primary-static text-white obsidian-mono text-[9px] tracking-[0.2em]">
                   <span className="relative flex h-2 w-2">
-                    <span className="animate-sheen absolute inline-flex h-full w-full bg-white/20"></span>
-                    <span className="relative inline-flex h-2 w-2 bg-white"></span>
+                    <span className="animate-sheen absolute inline-flex h-full w-full bg-neon-primary/40"></span>
+                    <span className="relative inline-flex h-2 w-2 bg-neon-primary"></span>
                   </span>
                   Refining the Narrative
               </div>
@@ -73,13 +73,13 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { title: 'Digital Architecture', items: ['Next.js', 'TypeScript', 'Node.js'], icon: Cpu },
-                { title: 'Human Exploration', items: ['Consciousness', 'Activism', 'History'], icon: Leaf },
-                { title: 'Sonic Experience', items: ['Songwriting', 'Guitar', 'Production'], icon: Globe }
+                { title: 'Digital Architecture', items: ['Next.js', 'TypeScript', 'Node.js'], icon: Cpu, color: 'text-neon-lab' },
+                { title: 'Human Exploration', items: ['Consciousness', 'Activism', 'History'], icon: Leaf, color: 'text-neon-psychonaut' },
+                { title: 'Sonic Experience', items: ['Songwriting', 'Guitar', 'Production'], icon: Globe, color: 'text-neon-library' }
               ].map((group) => (
                 <div key={group.title} className="obsidian-surface p-8 obsidian-hover border border-white/5">
                    <header className="flex items-center gap-3 mb-6">
-                      <group.icon className="w-5 h-5 text-white/60" />
+                      <group.icon className={`w-5 h-5 ${group.color} opacity-80`} />
                       <h4 className="text-sm obsidian-heading text-white">{group.title}</h4>
                    </header>
                    <div className="flex flex-wrap gap-2">

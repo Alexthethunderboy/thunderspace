@@ -20,14 +20,15 @@ export default function LibraryPage() {
       {/* Hero Section */}
       <header className="min-h-[60vh] flex flex-col items-center justify-center text-center space-y-12 py-20">
         <div className="relative">
-          <div className="p-6 rounded-2xl obsidian-surface border border-white/10 relative z-10">
-            <BookOpen className="w-16 h-16 text-white/60" />
+          <div className="p-6 rounded-2xl obsidian-surface border border-neon-library-static relative z-10">
+            <BookOpen className="w-16 h-16 text-neon-library opacity-80" />
           </div>
+          <div className="absolute inset-0 bg-neon-library/10 blur-3xl opacity-30 animate-pulse" />
         </div>
         
         <div className="space-y-6 max-w-3xl">
-          <div className="flex items-center justify-center gap-3 obsidian-mono text-[9px] text-white/40 uppercase tracking-[0.4em]">
-            <span className="w-1.5 h-1.5 bg-white/60" />
+          <div className="flex items-center justify-center gap-3 obsidian-mono text-[9px] text-neon-library/60 uppercase tracking-[0.4em]">
+            <span className="w-1.5 h-1.5 bg-neon-library shadow-[0_0_8px_rgba(0,240,255,0.6)]" />
             <span>Digital Garden Cultivation</span>
           </div>
           
@@ -44,7 +45,7 @@ export default function LibraryPage() {
       {/* Mind Map Section */}
       <section className="relative group mb-32">
         <div className="relative obsidian-surface p-8 md:p-12 border border-white/5">
-           <div className="flex items-center gap-2 text-white/40 mb-10 obsidian-mono">
+           <div className="flex items-center gap-2 text-neon-library/60 mb-10 obsidian-mono">
             <Sprout className="w-4 h-4" />
             <span className="text-[9px] uppercase tracking-[0.3em]">The Concept Graph</span>
           </div>
@@ -57,8 +58,8 @@ export default function LibraryPage() {
         <section className="space-y-12">
           <div className="space-y-4">
             <div className="flex items-center gap-4">
-               <div className="p-2.5 rounded-xl obsidian-surface border border-white/10">
-                <Sparkles className="w-5 h-5 text-white/60" />
+               <div className="p-2.5 rounded-xl obsidian-surface border border-neon-library-static">
+                <Sparkles className="w-5 h-5 text-neon-library/80" />
                </div>
                <h2 className="text-2xl md:text-3xl obsidian-heading text-white">Synthesis</h2>
             </div>
@@ -72,8 +73,8 @@ export default function LibraryPage() {
         <section className="space-y-12">
           <div className="space-y-4">
             <div className="flex items-center gap-4">
-               <div className="p-2.5 rounded-xl obsidian-surface border border-white/10">
-                <Sprout className="w-5 h-5 text-white/60" />
+               <div className="p-2.5 rounded-xl obsidian-surface border border-neon-library-static">
+                <Sprout className="w-5 h-5 text-neon-library/80" />
                </div>
                <h2 className="text-2xl md:text-3xl obsidian-heading text-white">The Garden</h2>
             </div>

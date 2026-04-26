@@ -130,10 +130,11 @@ function IconContainer({
           color
         )}
       >
+        <div className="absolute inset-0 bg-white/5 opacity-20 blur-xl group-hover:opacity-40 transition-opacity" />
         <span className="absolute -top-10 left-1/2 -translate-x-1/2 w-auto px-3 py-1 rounded bg-obsidian border border-white/10 text-white obsidian-mono text-[9px] tracking-widest opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 shadow-xl whitespace-nowrap">
           {title}
         </span>
-        <div className="h-5 w-5 sm:h-1/2 sm:w-1/2 flex items-center justify-center drop-shadow-[0_0_2px_rgba(255,255,255,0.3)]">{icon}</div>
+        <div className="h-5 w-5 sm:h-1/2 sm:w-1/2 flex items-center justify-center drop-shadow-[0_0_8px_rgba(255,255,255,0.4)] relative z-10">{icon}</div>
       </motion.div>
       
       {/* Mobile View */}

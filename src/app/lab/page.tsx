@@ -58,14 +58,15 @@ export default function LabPage() {
 
       <header className="min-h-[60vh] flex flex-col items-center justify-center text-center space-y-12 py-20">
         <div className="relative">
-          <div className="p-6 rounded-2xl obsidian-surface border border-white/10 relative z-10">
-            <Code2 className="w-16 h-16 text-white/60" />
+          <div className="p-6 rounded-2xl obsidian-surface border border-neon-lab-static relative z-10">
+            <Code2 className="w-16 h-16 text-neon-lab opacity-80" />
           </div>
+          <div className="absolute inset-0 bg-neon-lab/10 blur-3xl opacity-30 animate-pulse" />
         </div>
         
         <div className="space-y-6 max-w-3xl">
-          <div className="flex items-center justify-center gap-3 obsidian-mono text-[9px] text-white/40 uppercase tracking-[0.4em]">
-            <span className="w-1.5 h-1.5 bg-white/60" />
+          <div className="flex items-center justify-center gap-3 obsidian-mono text-[9px] text-neon-lab/60 uppercase tracking-[0.4em]">
+            <span className="w-1.5 h-1.5 bg-neon-lab shadow-[0_0_8px_rgba(57,255,20,0.6)]" />
             <span>Digital Studio & Forge</span>
           </div>
           
@@ -83,8 +84,8 @@ export default function LabPage() {
         <section className="lg:col-span-7 space-y-12">
           <div className="space-y-4">
             <div className="flex items-center gap-4">
-              <div className="p-2.5 rounded-xl obsidian-surface border border-white/10">
-                <Terminal className="w-5 h-5 text-white/60" />
+              <div className="p-2.5 rounded-xl obsidian-surface border border-neon-lab-static">
+                <Terminal className="w-5 h-5 text-neon-lab/80" />
               </div>
               <h2 className="text-2xl md:text-3xl obsidian-heading text-white">Interactive Console</h2>
             </div>
@@ -100,8 +101,8 @@ export default function LabPage() {
         <section className="lg:col-span-5 space-y-12">
           <div className="space-y-4">
             <div className="flex items-center gap-4">
-              <div className="p-2.5 rounded-xl obsidian-surface border border-white/10">
-                <Cpu className="w-5 h-5 text-white/60" />
+              <div className="p-2.5 rounded-xl obsidian-surface border border-neon-lab-static">
+                <Cpu className="w-5 h-5 text-neon-lab/80" />
               </div>
               <h2 className="text-2xl md:text-3xl obsidian-heading text-white">Tech Stack</h2>
             </div>
@@ -136,8 +137,8 @@ export default function LabPage() {
               >
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
-                    <h3 className="text-xl md:text-2xl obsidian-heading text-white group-hover:text-metallic transition-colors">{project.name}</h3>
-                    <div className={`w-1 h-1 ${project.status === 'Live' ? 'bg-white' : 'bg-white/10'}`} />
+                    <h3 className="text-xl md:text-2xl obsidian-heading text-white group-hover:text-neon-lab transition-colors">{project.name}</h3>
+                    <div className={`w-1 h-1 shadow-[0_0_5px_rgba(57,255,20,0.5)] ${project.status === 'Live' ? 'bg-neon-lab' : 'bg-white/10'}`} />
                   </div>
                   <p className="text-silver/60 obsidian-mono text-sm leading-relaxed max-w-md">{project.description}</p>
                 </div>

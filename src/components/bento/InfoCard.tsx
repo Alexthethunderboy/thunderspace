@@ -45,6 +45,8 @@ export function InfoCard({ className, children, href, variant = 'default' }: Inf
   const pulseDuration = 60 / tempo; // Duration of one beat
 
   const hoverClass = variant !== 'default' ? `obsidian-hover-${variant}` : '';
+  const staticBorderClass = variant !== 'default' ? `border-neon-${variant}-static` : '';
+  const underglowClass = variant !== 'default' ? `obsidian-underglow-${variant}` : '';
 
   const content = (
     <motion.div
@@ -64,8 +66,10 @@ export function InfoCard({ className, children, href, variant = 'default' }: Inf
         transformStyle: "preserve-3d",
       }}
       className={cn(
-        "obsidian-surface obsidian-hover relative overflow-hidden rounded-2xl p-5 md:p-7 border border-white/5 transition-all duration-400 group h-full cursor-pointer flex flex-col",
+        "obsidian-surface obsidian-hover relative overflow-hidden rounded-2xl p-5 md:p-7 border transition-all duration-400 group h-full cursor-pointer flex flex-col",
         hoverClass,
+        staticBorderClass,
+        underglowClass,
         className
       )}
     >

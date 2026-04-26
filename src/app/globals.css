@@ -112,42 +112,54 @@ body {
 
 /* Ambient Glow Utilities (Static, Subdued) */
 .obsidian-ambient-lab {
-  background: radial-gradient(circle at top right, rgba(57, 255, 20, 0.15) 0%, transparent 50%), var(--background);
+  background: radial-gradient(circle at top right, rgba(57, 255, 20, 0.25) 0%, transparent 60%), var(--background);
 }
 
 .obsidian-ambient-psychonaut {
-  background: radial-gradient(circle at top right, rgba(176, 38, 255, 0.15) 0%, transparent 50%), var(--background);
+  background: radial-gradient(circle at top right, rgba(176, 38, 255, 0.25) 0%, transparent 60%), var(--background);
 }
 
 .obsidian-ambient-library {
-  background: radial-gradient(circle at top right, rgba(0, 240, 255, 0.15) 0%, transparent 50%), var(--background);
+  background: radial-gradient(circle at top right, rgba(0, 240, 255, 0.25) 0%, transparent 60%), var(--background);
 }
 
 .obsidian-ambient-unlearn {
-  background: radial-gradient(circle at top right, rgba(255, 0, 60, 0.15) 0%, transparent 50%), var(--background);
+  background: radial-gradient(circle at top right, rgba(255, 0, 60, 0.25) 0%, transparent 60%), var(--background);
 }
 
 .obsidian-ambient-home {
-  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.06) 0%, transparent 50%), var(--background);
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1) 0%, transparent 60%), var(--background);
 }
+
+/* Static Underglow Utilities */
+.obsidian-underglow-lab { box-shadow: 0 10px 40px -15px rgba(57, 255, 20, 0.15); }
+.obsidian-underglow-psychonaut { box-shadow: 0 10px 40px -15px rgba(176, 38, 255, 0.15); }
+.obsidian-underglow-library { box-shadow: 0 10px 40px -15px rgba(0, 240, 255, 0.15); }
+.obsidian-underglow-unlearn { box-shadow: 0 10px 40px -15px rgba(255, 0, 60, 0.15); }
+
+/* Static Border Utilities */
+.border-neon-lab-static { border-color: rgba(57, 255, 20, 0.25); }
+.border-neon-psychonaut-static { border-color: rgba(176, 38, 255, 0.25); }
+.border-neon-library-static { border-color: rgba(0, 240, 255, 0.25); }
+.border-neon-unlearn-static { border-color: rgba(255, 0, 60, 0.25); }
 
 /* Subtle Hover Overlays */
 .obsidian-hover-lab:hover {
-  border-color: rgba(57, 255, 20, 0.3);
-  box-shadow: 0 0 15px rgba(57, 255, 20, 0.05);
+  border-color: rgba(57, 255, 20, 0.4);
+  box-shadow: 0 0 25px rgba(57, 255, 20, 0.1);
 }
 
 .obsidian-hover-psychonaut:hover {
-  border-color: rgba(176, 38, 255, 0.3);
-  box-shadow: 0 0 15px rgba(176, 38, 255, 0.05);
+  border-color: rgba(176, 38, 255, 0.4);
+  box-shadow: 0 0 25px rgba(176, 38, 255, 0.1);
 }
 
 .obsidian-hover-library:hover {
-  border-color: rgba(0, 240, 255, 0.3);
-  box-shadow: 0 0 15px rgba(0, 240, 255, 0.05);
+  border-color: rgba(0, 240, 255, 0.4);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.1);
 }
 
 .obsidian-hover-unlearn:hover {
-  border-color: rgba(255, 0, 60, 0.3);
-  box-shadow: 0 0 15px rgba(255, 0, 60, 0.05);
+  border-color: rgba(255, 0, 60, 0.4);
+  box-shadow: 0 0 25px rgba(255, 0, 60, 0.1);
 }
